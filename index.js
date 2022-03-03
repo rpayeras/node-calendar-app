@@ -7,6 +7,8 @@ const { dbConnection } = require('./database/config');
 
 const app = express();
 
+console.clear()
+
 //Db
 dbConnection();
 
