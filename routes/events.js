@@ -27,7 +27,7 @@ router.put('/:id', [
     check('endDate', 'endDate must be a date').custom(isDate),
     check('notes', 'notes must be a string').isString(),
     validateRequestBody
-],updateEvent)
+], updateEvent)
 
 router.delete('/:id', [
     validateRequestBody

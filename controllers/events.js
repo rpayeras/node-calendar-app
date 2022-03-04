@@ -37,7 +37,7 @@ const updateEvent = async(req, res) => {
     const uid = req.uid;
 
     try{
-        let event = await Event.findOne({eventId})
+        let event = await Event.findById(eventId)
 
         if(!event){
             return res.status(404).json({
@@ -79,7 +79,7 @@ const deleteEvent = async(req, res) => {
     const uid = req.uid;
 
     try{
-        let event = await Event.findOne({eventId})
+        let event = await Event.findById(eventId)
 
         if(!event){
             return res.status(404).json({

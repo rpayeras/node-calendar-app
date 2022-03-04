@@ -100,7 +100,9 @@ const renewUser = async(req, res) => {
     res.status(201).json({
         ok: true,
         data: {
-            token
+            token,
+            uid: req.uid,
+            name: req.name
         }
     })
 }
