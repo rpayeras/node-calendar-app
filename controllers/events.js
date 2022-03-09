@@ -103,7 +103,7 @@ const deleteEvent = async(req, res) => {
     } catch(err) {
         res.status(500).json({
             ok: false,
-            msg: 'Error on save event',
+            msg: 'Error on delete event',
         })
 
         console.log(err)
