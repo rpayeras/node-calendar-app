@@ -1,36 +1,35 @@
-const jwt = require("jsonwebtoken")
+const jwt = require('jsonwebtoken')
 
 const validateJwt = (req, res, next) => {
-    const token = req.header('x-token')
+  const token = req.header('x-token')
 
-    if(!token){
-        return res.status(401).json({
-            ok: false,
-            msg: 'Error on check auth token'
-        })
-    }
+  if (!token) {
+    return res.status(401).json({
+      ok: false,
+      msg: 'Error on check auth token'
+    })
+  }
 
-    try{
-        const {uid, name} = jwt.verify(
-            token,
-            process.env.SECRET_JWT_SEED
-        )
+  try {
+    const { uid, name } = jwt.verify(
+      token,
+      process.env.SECRET_JWT_SEED
+    )
 
-        req.uid = uid;
-        req.name = name;
+    req.uid = uid
+    req.name = name
+  } catch (err) {
+    console.log(err)
 
-    } catch(err) {
-        console.log(err)
+    return res.status(401).json({
+      ok: false,
+      msg: 'Token invalid'
+    })
+  }
 
-        return res.status(401).json({
-            ok: false,
-            msg: 'Token invalid'
-        })
-    }
-
-    next()
+  next()
 }
 
 module.exports = {
-    validateJwt
+  validateJwt
 }
