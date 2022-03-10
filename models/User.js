@@ -1,19 +1,19 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require("mongoose");
 
 const UserSchema = Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
     require: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    require: true
-  }
-})
+    require: true,
+  },
+});
 
-module.exports = model('User', UserSchema)
+module.exports = model("User", UserSchema);
