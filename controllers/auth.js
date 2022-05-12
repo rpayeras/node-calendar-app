@@ -11,7 +11,7 @@ const loginUser = async (req, res) => {
     if (!user) {
       return res.status(400).json({
         ok: false,
-        msg: "user not exists",
+        msg: "This user not exists",
       });
     }
 
@@ -20,7 +20,7 @@ const loginUser = async (req, res) => {
     if (!validPassword) {
       return res.status(400).json({
         ok: false,
-        msg: "crendetials incorrect",
+        msg: "Incorrect credentials, try again",
       });
     }
 
@@ -37,7 +37,7 @@ const loginUser = async (req, res) => {
   } catch (err) {
     res.status(500).json({
       ok: false,
-      msg: "Error on login user",
+      msg: "Error on login user, please request assistance",
     });
 
     console.log(err);
@@ -60,7 +60,7 @@ const createUser = async (req, res) => {
     if (user) {
       return res.status(400).json({
         ok: false,
-        msg: "user exists",
+        msg: "This user not exists",
       });
     }
 
@@ -84,7 +84,7 @@ const createUser = async (req, res) => {
   } catch (err) {
     res.status(500).json({
       ok: false,
-      msg: "Error on save new user",
+      msg: "Error on save new user, please request assistance",
     });
 
     console.log(err);

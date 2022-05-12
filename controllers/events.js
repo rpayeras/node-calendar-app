@@ -46,7 +46,7 @@ const updateEvent = async (req, res) => {
     if (event.user.toString() !== uid) {
       return res.status(401).json({
         ok: false,
-        msg: "You no have permission for edit this event",
+        msg: "You not have permissions to edit this event",
       });
     }
 
@@ -83,7 +83,7 @@ const deleteEvent = async (req, res) => {
     if (!event) {
       return res.status(404).json({
         ok: false,
-        msg: "event not exists",
+        msg: "This event not exists",
       });
     }
 
