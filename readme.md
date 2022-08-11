@@ -4,7 +4,7 @@ This is the backend part of the react app from here. Made it with node js that c
 
 ## Configure env vars
 
-Change .env.sample to .env and put it your own env vars
+Change .env.sample to .env and put it your own env vars.
 
 ## Run client
 
